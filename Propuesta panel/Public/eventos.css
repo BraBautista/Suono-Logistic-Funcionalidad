@@ -1,0 +1,73 @@
+/* public/eventos.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 2rem;
+}
+
+h1 {
+  color: #3842b5;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 1.5rem;
+  background-color: #3842b5;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #594fbb;
+}
+
+#mensaje {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+.volver {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.volver a {
+  color: #3842b5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.volver a:hover {
+  color: #594fbb;
+}

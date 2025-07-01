@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eventos - Suono Logistic</title>
+  <link rel="stylesheet" href="eventos.css" />
+</head>
+<body>
+  <h1>Crear Nuevo Evento</h1>
+
+  <form id="evento-form">
+    <label for="id_evento">ID del Evento:</label>
+    <input type="text" id="id_evento" required />
+
+    <label for="fecha">Fecha (dd/mm/aaaa):</label>
+    <input type="text" id="fecha" required />
+
+    <label for="hora_inicio">Hora de Inicio (Ej: 3:00pm):</label>
+    <input type="text" id="hora_inicio" required />
+
+    <label for="hora_fin">Hora de Finalización (Ej: 7:30pm):</label>
+    <input type="text" id="hora_fin" required />
+
+    <label for="ubicacion">Ubicación:</label>
+    <input type="text" id="ubicacion" required />
+
+    <button type="submit">Guardar Evento</button>
+    <p id="mensaje"></p>
+  </form>
+
+  <div class="volver">
+    <a href="/">⬅ Volver al Inicio</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('evento-form');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const evento = {
+        id_evento: form.id_evento.value.trim(),
+        fecha: form.fecha.value.trim(),
+        hora_inicio: form.hora_inicio.value.trim(),
+        hora_fin: form.hora_fin.value.trim(),
+        ubicacion: form.ubicacion.value.trim()
+      };
+
+      try {
+        const res = await fetch('/api/eventos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(evento)
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          mensaje.textContent = '✅ Evento creado exitosamente';
+          form.reset();
+        } else {
+          mensaje.textContent = `⚠️ Error: ${data.error || data.mensaje}`;
+          mensaje.style.color = 'red';
+        }
+      } catch (err) {
+        mensaje.textContent = '❌ Error de conexión con el servidor';
+        mensaje.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
