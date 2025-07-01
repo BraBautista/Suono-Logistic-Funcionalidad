@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Administrativo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Panel</h2>
+    <a href="#" class="nav-link active" data-section="dashboard">Panel</a>
+    <a href="#" class="nav-link" data-section="clientes">Clientes</a>
+    <a href="#" class="nav-link" data-section="inventario">Inventario</a>
+    <a href="#" class="nav-link" data-section="reservas">Reservas</a>
+    <a href="#" class="nav-link" data-section="colaboradores">Colaboradores</a>
+    <a href="#" class="nav-link" data-section="proveedores">Proveedores</a>
+    <a href="#" class="nav-link" data-section="pqr">PQR</a>
+    <a href="#" class="nav-link" data-section="configuracion">Configuración</a>
+  </nav>
+
+  <main class="main">
+    <div class="header">
+      <h1>Panel Administrativo</h1>
+      <div>
+        <input class="search-bar" type="text" placeholder="Buscar..." />
+        <button class="button">Nuevo Evento</button>
+        <button class="button">Nueva Cotización</button>
+      </div>
+    </div>
+
+    <section id="dashboard" class="section">
+      <div class="card">
+        <h3>Próximos Eventos</h3>
+        <div class="event">Evento 1 - 17/05/2024 · Ubicación / Cliente</div>
+        <div class="event">Evento 2 - 17/05/2024 · Ubicación / Cliente</div>
+        <div class="event">Evento 3 - 17/05/2024 · Ubicación / Cliente</div>
+      </div>
+
+      <div class="card">
+        <h3>Disponibilidad de Equipos</h3>
+        <p>Iluminación: Disponible</p>
+        <p>Pantallas: Disponible</p>
+        <p>Sonido: En uso</p>
+      </div>
+
+      <div class="card">
+        <h3>Clientes</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cliente A</td>
+              <td>cliente.a@example.com</td>
+            </tr>
+            <tr>
+              <td>Cliente B</td>
+              <td>cliente.b@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Cotizaciones Recientes</h3>
+        <p>Cliente A - #00842 - Aceptada</p>
+        <p>Cliente B - #00841 - Pendiente</p>
+        <p>Cliente C - #00840 - Aceptada</p>
+      </div>
+    </section>
+
+    <section id="clientes" class="section" style="display:none;">
+      <div class="card">
+        <h3>Gestión de Clientes</h3>
+        <form id="form-clientes">
+          <input type="text" id="nombreCliente" placeholder="Nombre" required />
+          <input type="email" id="correoCliente" placeholder="Correo" required />
+          <button type="submit" class="button">Agregar</button>
+        </form>
+        <table class="table" id="tabla-clientes">
+          <thead><tr><th>Nombre</th><th>Correo</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="inventario" class="section" style="display:none;">
+      <div class="card">
+        <h3>Inventario</h3>
+        <form id="form-inventario">
+          <input type="text" id="equipoNombre" placeholder="Nombre del equipo" required />
+          <input type="text" id="equipoEstado" placeholder="Estado" required />
+          <button type="submit" class="button">Agregar</button>
+        </form>
+        <table class="table" id="tabla-inventario">
+          <thead><tr><th>Equipo</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="reservas" class="section" style="display:none;">
+      <div class="card">
+        <h3>Reservas</h3>
+        <form id="form-reservas">
+          <input type="text" id="clienteReserva" placeholder="Cliente" required />
+          <input type="date" id="fechaReserva" required />
+          <input type="text" id="servicioReserva" placeholder="Servicio" required />
+          <button type="submit" class="button">Agregar</button>
+        </form>
+        <table class="table" id="tabla-reservas">
+          <thead><tr><th>Cliente</th><th>Fecha</th><th>Servicio</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="colaboradores" class="section" style="display:none;">
+      <div class="card">
+        <h3>Colaboradores</h3>
+        <form id="form-colaborador">
+          <input type="text" id="nombreColaborador" placeholder="Nombre completo" required />
+          <input type="text" id="rolColaborador" placeholder="Rol" required />
+          <input type="email" id="correoColaborador" placeholder="Correo" required />
+          <button type="submit" class="button">Agregar</button>
+        </form>
+        <table class="table" id="tabla-colaboradores">
+          <thead><tr><th>Nombre</th><th>Rol</th><th>Correo</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="proveedores" class="section" style="display:none;">
+      <div class="card">
+        <h3>Proveedores</h3>
+        <form id="form-proveedor">
+          <input type="text" id="nombreProveedor" placeholder="Empresa / Nombre" required />
+          <input type="text" id="productoProveedor" placeholder="Producto o Servicio" required />
+          <input type="tel" id="contactoProveedor" placeholder="Contacto" required />
+          <button type="submit" class="button">Agregar</button>
+        </form>
+        <table class="table" id="tabla-proveedores">
+          <thead><tr><th>Nombre</th><th>Producto</th><th>Contacto</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pqr" class="section" style="display:none;">
+      <div class="card">
+        <h3>PQR</h3>
+        <form id="form-pqr">
+          <input type="text" id="nombrePQR" placeholder="Nombre del solicitante" required />
+          <input type="text" id="tipoPQR" placeholder="Tipo (Petición, Queja, Reclamo)" required />
+          <input type="text" id="mensajePQR" placeholder="Mensaje" required />
+          <button type="submit" class="button">Enviar</button>
+        </form>
+        <table class="table" id="tabla-pqr">
+          <thead><tr><th>Nombre</th><th>Tipo</th><th>Mensaje</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="configuracion" class="section" style="display:none;">
+      <div class="card">
+        <h3>Configuración</h3>
+        <form id="form-config">
+          <input type="text" id="empresaNombre" placeholder="Nombre de la empresa" required />
+          <input type="color" id="colorPanel" />
+          <button type="submit" class="button">Guardar</button>
+        </form>
+        <div id="resultado-config"></div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
