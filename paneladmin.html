@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Administrativo</title>
+  <link rel="stylesheet" href="./admin.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Panel</h2>
+    <ul>
+      <li class="active">Panel</li>
+      <li>Eventos</li>
+      <li>Clientes</li>
+      <li>Inventario</li>
+      <li>Reservas</li>
+      <li>Colaboradores</li>
+      <li>Proveedores</li>
+      <li>Reportes</li>
+      <li>PQR</li>
+      <li>Configuración</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Panel Administrativo</h1>
+      <div class="actions">
+        <div class="search-box">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Buscar..." />
+        </div>
+        <button>Nuevo Evento</button>
+        <button>Nueva Cotización</button>
+        <a href="/insertar" class="btn-back">Registrar</a>
+        <a href="/portal/inicio.html" class="btn-back">Volver al Inicio</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card wide">
+        <h3>Próximos Eventos</h3>
+        <div class="event">Evento 1 - 17/05/2024 · Ubicación / Cliente</div>
+        <div class="event">Evento 2 - 17/05/2024 · Ubicación / Cliente</div>
+        <div class="event">Evento 3 - 17/05/2024 · Ubicación / Cliente</div>
+      </div>
+
+      <div class="card">
+        <h3>Disponibilidad de Equipos</h3>
+        <p>Iluminación: Disponible</p>
+        <p>Pantallas: Disponible</p>
+        <p>Sonido: En uso</p>
+      </div>
+
+      <div class="card">
+        <h3>Clientes</h3>
+        <table>
+          <tr><th>Nombre</th><th>Correo</th></tr>
+          <tr><td>Cliente A</td><td>cliente.a@example.com</td></tr>
+          <tr><td>Cliente B</td><td>cliente.b@example.com</td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Cotizaciones Recientes</h3>
+        <p>Cliente A - #00842 - Aceptada</p>
+        <p>Cliente B - #00841 - Pendiente</p>
+        <p>Cliente C - #00840 - Aceptada</p>
+      </div>
+    </div>
+
+    <!-- Módulos dinámicos CRUD -->
+    <div id="dynamicSection" style="width: 100%; margin-top: 20px;"></div>
+  </div>
+
+  <script src="./admin.js"></script>
+</body>
+</html>
